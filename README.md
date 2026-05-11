@@ -1,3 +1,3 @@
-** Auranal - Interactive journaling CLI .
+## Auranal - Interactive journaling CLI .
 
 
