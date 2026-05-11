@@ -34,7 +34,7 @@ if [ "$CURRENT_STREAK" -gt 1 ]; then
     gum style \
     --foreground 226 --border-foreground 226 --border rounded \
     --align center --width 40 --margin "1 2" \
-    "🔥 $CURRENT_STREAK DAY STREAK! 🔥" "You're on fire!"
+    " $CURRENT_STREAK DAY STREAK! " "You're on fire!"
 else
     gum style --foreground 86 "Welcome back! Let's start a new streak today."
 fi
