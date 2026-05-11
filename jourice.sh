@@ -1,8 +1,9 @@
 #!/bin/bash
 
+#all the paths here
 VAULT="$HOME/Auranal/vault/"
 
-
+#for the streaks 
 STREAK_FILE="$HOME/Auranal/.streak"
 LAST_LOG_FILE="$HOME/Auranal/.last_log"
 TODAY=$(date +%Y-%m-%d)
@@ -28,7 +29,7 @@ fi
 echo "$CURRENT_STREAK" > "$STREAK_FILE"
 echo "$TODAY" > "$LAST_LOG_FILE"
 
-
+# for displaying the streak
 if [ "$CURRENT_STREAK" -gt 1 ]; then
     gum style \
     --foreground 226 --border-foreground 226 --border rounded \
@@ -42,6 +43,10 @@ sleep 1.5
 
 clear 
 
+
+
+#categories
+
 category=$(gum filter --placeholder "Select a Category" < Categories.txt)
 
 if [ "$category" == "Custom" ]; then
@@ -52,6 +57,7 @@ if [ "$category" == "Custom" ]; then
 fi
 
   
+
 clear 
 echo "<---------------->" >> "$VAULT$(date +'%A_%d_%b').txt"
 echo "$category"
@@ -59,9 +65,14 @@ echo "$(date +'%a %d %b %H:%M')|[$category]: " >> "$VAULT$(date +'%A_%d_%b').txt
 echo "" >> "$VAULT$(date +'%A_%d_%b').txt"
 echo "-----------"
 
+#for the journaling 
 journal=$(gum write --placeholder "What happened today? " >> "$VAULT$(date +'%A_%d_%b').txt")
 
 clear
+
+
+#mood
+
 echo "How was your mood then..?"
 mood=$(gum filter --placeholder "How was your mood today" < moods.txt)
 
@@ -89,9 +100,10 @@ clear
 
 sleep 0.4
 
+#exiting..
+
 exit=$(gum choose "GoodNight 󰤄  " "Read_Journal")
 
-# Added spaces and matched the underscore
 if [ "$exit" == "GoodNight 󰤄  " ]; then 
   gum style \
 	--foreground 212 --border-foreground 12 --border double \
