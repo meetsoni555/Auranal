@@ -2,6 +2,7 @@
 
 #all the paths here
 VAULT="$HOME/Auranal/vault/"
+STATS_SCRIPT="$HOME/Auranal/stats.py"
 
 #for the streaks 
 STREAK_FILE="$HOME/Auranal/.streak"
@@ -41,7 +42,7 @@ fi
 
 sleep 1.5
 
-clear 
+clear
 
 
 
@@ -102,7 +103,7 @@ sleep 0.4
 
 #exiting..
 
-exit=$(gum choose "GoodNight 󰤄  " "Read_Journal")
+exit=$(gum choose "GoodNight 󰤄  " "Read_Journal" "View Stats")
 
 if [ "$exit" == "GoodNight 󰤄  " ]; then 
   gum style \
@@ -114,8 +115,17 @@ if [ "$exit" == "GoodNight 󰤄  " ]; then
   
 elif [ "$exit" == "Read_Journal" ]; then
   gum pager < "$VAULT$(date +'%A_%d_%b'.txt)"
+  
+elif [ "$exit" == "View Stats" ]; then 
+    clear
+    python3 "$STATS_SCRIPT" | gum style \
+        --border rounded \
+        --border-foreground 57 \
+        --padding "1 2" \
+        --margin "1 1"
+    read -p "Enter to close .."
+    clear
 fi
-
 
 
 
