@@ -22,6 +22,16 @@
 
 <img width="100%" height="386" alt="image" src="https://github.com/user-attachments/assets/16fd6bce-a0f6-4219-b0e7-6231b4bd6b3c" />
 
+- Streaks :
+  <p align="center">
+  <img width="80%" height="200" alt="image" src="https://github.com/user-attachments/assets/05359bde-ace4-4de0-a8e5-0a33a3eec142" />
+  </p>
+
+- Stats :
+ <p align="center">
+ <img width="461" height="533" alt="image" src="https://github.com/user-attachments/assets/5ebe2c23-cb74-49da-bc3f-d9889b986b64" />
+ </p>
+
 
 
 - The Vault: Everything is saved locally as .txt files within a dedicated vault/ folder, ensuring your data is portable, readable, and private.
